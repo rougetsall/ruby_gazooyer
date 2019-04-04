@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gazooys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contenu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gazooys.each do |gazooy| %>
+      <tr>
+        <td><%= gazooy.contenu %></td>
+        <td><%= link_to 'Show', gazooy %></td>
+        <td><%= link_to 'Edit', edit_gazooy_path(gazooy) %></td>
+        <td><%= link_to 'Destroy', gazooy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gazooy', new_gazooy_path %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody  >
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td style="padding-left: 7px;"><%= tweet.body %></td>
+        
+        <% if tweet.user.present?%>
+        <td style="padding-left: 7px;"><%= tweet.user.email %></td>
+        <% else%>
+       
+        <td style="padding-left: 7px;">User is not presente</td>
+        <% end %>
+       
+        <td style="padding-left: 7px;"><%= link_to 'Show', tweet %></td>
+        
+        <td style="padding-left: 7px;"><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+        
+        <td style="padding-left: 4px;"><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>

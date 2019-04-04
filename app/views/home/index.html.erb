@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		</style>
+	</head>
+	<body>
+				<p>
+				You're on Gazooyr !
+				</p>
+				<p >
+						Le twitter qu'il est vachement plus mieux
+				</p>
+				<p>
+							Les derniers gazooies
+				</p>
+		<% if user_signed_in?%>
+			<div class="container" style="background-color: #F6B62E;">
+		
+			<div class="row">
+				<div class="col-md-4">
+					<p>
+						You're on Gazooyr !
+					</p>
+					<p >
+						Le twitter qu'il est vachement plus mieux
+					</p>
+
+				</div>
+				<div class="col-md-8">
+					
+					<p>
+							Les derniers gazooies
+					</p>
+					<h1 class="well">Tendances</h1>
+					
+				</div>
+			
+			</div> 
+				<h1 class="jumbotron">Bienvenue <%= @name %></h1>
+				<br>
+			<% @postes.each do |post|  %>
+
+				<h1><%= post['title'] %></h1>
+				<br>
+				<%= post['body'] %>
+				<br>
+			<% end %>
+			
+			</div>
+		<% end %>
+
+	</body>
+</html>
